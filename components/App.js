@@ -29,14 +29,12 @@ const contactForm = {
 };
 
 const App = React.createClass({
-    render: function() {
-        return React.createElement(
-            "div",
-            { className: "app" },
-            React.createElement(ContactForm, { contact: contactForm }),
-            React.createElement(ContactsList, { items: contacts }, {})
-        );
-    }
+    render: () => (
+        <div className="app">
+            <ContactForm contact={contactForm} />
+            <ContactsList items={contacts} />
+        </div>
+    )
 });
 
 export default App;

@@ -1,18 +1,16 @@
 const Contact = React.createClass({
     render: function() {
-        return React.createElement(
-            "div",
-            { className: "contactItem" },
-            React.createElement("i", {
-                className: "contactIcon far fa-address-card"
-            }),
-            React.createElement("p", { className: "contactLabel" }, "Imię: " + this.props.item.firstName),
-            React.createElement("p", { className: "contactLabel" }, "Nazwisko: " + this.props.item.lastName),
-            React.createElement(
-                "a",
-                { className: "contactEmail", href: "mailto:" + this.props.item.email },
-                this.props.item.email
-            )
+        const { firstName, lastName, email } = this.props.item;
+
+        return (
+            <div className="contactItem">
+                <i className="contactIcon far fa-address-card" />
+                <p className="contactLabel">Imię: {firstName}</p>
+                <p className="contactLabel">Nazwisko: {lastName}</p>
+                <a className="contactEmail" href={"mailto: " + email}>
+                    {email}
+                </a>
+            </div>
         );
     },
 
