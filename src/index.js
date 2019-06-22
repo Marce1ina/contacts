@@ -1,4 +1,4 @@
-import App from "./components/App";
+import App from "./App";
 
 const app = React.createElement(App);
 ReactDOM.render(app, document.getElementById("app"));
